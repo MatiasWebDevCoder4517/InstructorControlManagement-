@@ -1,0 +1,22 @@
+1. python manage.py collectstatic
+2. python manage.py makemigrations
+3. python manage.py migrate
+4. python manage.py createsuperuser
+5. pip install -r requirements.txt
+6. pip install -r requirements.txt --upgrade
+7. python -m venv env
+8. source env/Scripts/activate
+9. pip freeze > requirements.txt
+10. deactivate
+11. pip install --upgrade pip
+12. django-admin startproject 'name_project'
+13. python manage.py startapp 'name_app'
+14. pip install pip-tools
+15. pip-upgrade
+16. pip install pip-upgrader
+17. pip uninstall <packagename>
+18. python -m pip install --upgrade pip
+19. django-admin startproject <insert_projectname>
+20. 
+
+
