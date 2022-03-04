@@ -4,8 +4,8 @@ from django.db import transaction
 from django.forms.utils import ValidationError
 from django import forms
 
-from elearn.models import (Answer, Question, Learner, LearnerAnswer,
-                           Course, User, Announcement)
+from spacelearn.models import (Answer, Question, Learner, LearnerAnswer,
+                               Course, User, Announcement)
 
 
 class PostForm(forms.ModelForm):

@@ -12,12 +12,17 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 ''' BASE_DIR = Path(__file__).resolve().parent.parent '''
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+}
 
 
 # Quick-start development settings - unsuitable for production
@@ -52,7 +57,7 @@ INSTALLED_APPS = [
 
 ]
 
-''' AUTH_USER_MODEL = 'spacelearn.User' '''
+AUTH_USER_MODEL = 'spacelearn.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,7 +67,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_session_timeout.middleware.SessionTimeoutMiddleware",
 ]
+
+SESSION_EXPIRE_SECONDS = 3600  # 1 hour
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+''' SESSION_TIMEOUT_REDIRECT = "accounts/login" '''
+
 
 ROOT_URLCONF = 'interestellarlearn.urls'
 
