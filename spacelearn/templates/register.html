@@ -1,18 +1,11 @@
 {% load static %}
 <link href="{% static 'css/kye.css' %}" rel="stylesheet">
-<style type="text/css">
-  #bg {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-  }
-</style>
 <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/four/css/bootstrap.min.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/three/css/bootstrap.min.css' %}">
 
 {% include 'nav.html' %}
 
-<body id="bg" >
+<body id="bg">
   <div class="container-fluid">
     <div class="row" style="padding-top: 335px">
       <div class="col-sm-4"></div>
@@ -22,7 +15,7 @@
         <div class="col-sm-10">
           <div class="filter"></div>
           <div class="container bg-dark">
-            <h2 style="color: white">E-Learning Portal</h2>
+            <h2 style="color: white">Interestellar Learning Portal</h2>
             <br>
             <form action="{% url 'register' %}" method="POST">
               {% csrf_token %}
@@ -54,5 +47,3 @@
   </div>
 
 </body>
-
-</html>
