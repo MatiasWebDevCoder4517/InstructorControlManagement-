@@ -18,12 +18,12 @@
 
       <div class="col-sm-5" style="padding-top: 80px">
         <form style="background-color:" method="post" novalidate>
-          <h2 class="text-primary">Sign Up As Learner/Apprentice</h2>
+          <h2 class="text-primary">REGISTER</h2>
 
           {% csrf_token %}
           <input type="hidden" name="next" value="{{ next }}">
           {{ form|crispy }}
-          <button type="submit" class="btn btn-success">Sign up</button>
+          <button type="submit" class="btn btn-success">Register</button>
         </form>
         <div class="card-footer">
           <div class="d-flex justify-content-center">

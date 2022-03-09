@@ -82,9 +82,9 @@ def logoutView(request):
 
 def loginView(request):
     if request.method == 'POST':
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, email=email, password=password)
         if user is not None and user.is_active:
             auth.login(request, user)
             if user.is_admin or user.is_superuser:
@@ -243,7 +243,7 @@ def acreate_profile(request):
         city = request.POST['city']
         country = request.POST['country']
         avatar = request.FILES['avatar']
-        hobby = request.POST['hobby']
+
         current_user = request.user
         user_id = current_user.id
         print(user_id)

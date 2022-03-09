@@ -17,16 +17,16 @@
           <div class="filter"></div>
           <div class="container bg-dark">
             <center>
-              <h2 style="color: white">Interestellar Learning</h2>
+              <h2 style="color: white">USER LOG IN</h2>
             </center>
             <br>
             <form action="{% url 'login' %}" method="POST">
               {% csrf_token %}
-              <label>Username</label><br>
-              <input type="text" name="username" required="Fill Username" style="background-color: white"><br>
+              <label>Email</label><br>
+              <input type="text" name="email" required="Fill Email" style="background-color: white"><br>
               <label>Password</label><br>
               <input type="password" name="password" required="Fill Password" style="background-color: white"><br>
-              <button>Sign in</button>
+              <button>Log in</button>
             </form>
             <div class="card-footer">
               <div class="d-flex justify-content-center">

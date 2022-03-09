@@ -7,8 +7,33 @@ from embed_video.fields import EmbedVideoField
 #######################################################################################
 
 
+''' class User(AbstractUser):
+    is_learner = models.BooleanField(default=False)
+    is_instructor = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to='', default='no-img.jpg', blank=True)
+    first_name = models.CharField(max_length=255, default='')
+    last_name = models.CharField(max_length=255, default='')
+    email = models.EmailField(default='none@email.com')
+    phonenumber = models.CharField(max_length=255, blank=True, null=True)
+    birth_date = models.DateField(default='1975-12-12')
+    bio = models.TextField(default='')
+    city = models.CharField(max_length=255, default='')
+    state = models.CharField(max_length=255, default='')
+    country = models.CharField(max_length=255, default='')
+    favorite_animal = models.CharField(max_length=255, default='')
+    hobby = models.CharField(max_length=255, default='')
+
+    def __str__(self):
+        return self.user.username '''
+
+
 class MyUserManager(BaseUserManager):
-    def create_user(self, first_name, last_name, username, email, password=None):
+    def create_user(self, username,  email, password=None):
         if not email:
             raise ValueError('User must have an email address')
 
@@ -18,53 +43,49 @@ class MyUserManager(BaseUserManager):
         user = self.model(
             email=self.normalize_email(email),
             username=username,
-            first_name=first_name,
-            last_name=last_name,
+
         )
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, first_name, last_name, email, username, password):
+    def create_superuser(self,  email, username, password):
         user = self.create_user(
             email=self.normalize_email(email),
             username=username,
             password=password,
-            first_name=first_name,
-            last_name=last_name,
+
         )
         user.is_admin = True
         user.is_active = True
         user.is_instructor = True
         user.is_learner = True
         user.is_staff = True
+        user.is_superuser = True
         user.save(using=self._db)
         return user
 
 
 class User(AbstractBaseUser):
     username = models.CharField(max_length=50, unique=True)
-    email = models.EmailField(default='none@email.com', unique=True)
-    first_name = models.CharField(max_length=255, default='')
-    last_name = models.CharField(max_length=255, default='')
+    email = models.EmailField(default='none@gmail.com', unique=True)
+
     is_learner = models.BooleanField(default=False)
     is_instructor = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now_add=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+    REQUIRED_FIELDS = ['username']
 
     objects = MyUserManager()
 
-    def full_name(self):
-        return f'{self.first_name} {self.last_name}'
-
     def __str__(self):
-        return self.email
+        return f'{self.email} {self.username}'
 
     def has_perm(self, perm, obj=None):
         return self.is_admin
@@ -76,18 +97,23 @@ class User(AbstractBaseUser):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     avatar = models.ImageField(upload_to='', default='no-img.jpg', blank=True)
+    first_name = models.CharField(max_length=255, default='')
+    last_name = models.CharField(max_length=255, default='')
     phonenumber = models.CharField(
         max_length=255, blank=True, null=True, unique=True)
     birth_date = models.DateField(default='1975-12-12')
     bio = models.TextField(default='')
     city = models.CharField(max_length=255, default='')
-    state = models.CharField(max_length=255, default='')
+    
     country = models.CharField(max_length=255, default='')
-    favorite_programming_lang = models.CharField(max_length=255, default='')
-    hobby = models.CharField(max_length=255, default='')
+    
 
     def __str__(self):
-        return f'{self.user.first_name} {self.user.last_name} '
+        return f'{self.user.username}'
+
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
+
 
 ##################################################################################################
 
