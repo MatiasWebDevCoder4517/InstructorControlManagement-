@@ -289,14 +289,13 @@ class QuizCreateView(CreateView):
         quiz = form.save(commit=False)
         quiz.owner = self.request.user
         quiz.save()
-        messages.success(
-            self.request, 'Quiz created, Go A Head And Add Questions')
+        messages.success(self.request, 'Quiz created, Go A Head And Add Questions')
         return redirect('quiz_change', quiz.pk)
 
 
 class QuizUpateView(UpdateView):
     model = Quiz
-    fields = ('name', 'course')
+    fields = ('name', 'course',)
     template_name = 'dashboard/instructor/quiz_change_form.html'
 
     def get_context_data(self, **kwargs):
