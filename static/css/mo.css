@@ -1,33 +1,39 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
-html,body{
+
+html,
+body {
   display: grid;
   height: 100vh;
-  place-items:center;
+  place-items: center;
   background: #be2edd;
 }
-.main_div{
+
+.main_div {
   width: 365px;
   background: #fff;
   padding: 30px;
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
-.main_div .title{
+
+.main_div .title {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
 }
-.main_div .social_icons{
+
+.main_div .social_icons {
   margin-top: 20px;
   display: flex;
   justify-content: center;
 }
-.social_icons a{
+
+.social_icons a {
   display: block;
   height: 45px;
   width: 100%;
@@ -39,34 +45,42 @@ html,body{
   text-decoration: none;
   transition: all 0.3s linear;
 }
-.social_icons a span{
+
+.social_icons a span {
   margin-left: 5px;
   font-size: 18px;
 }
-.social_icons a:first-child{
+
+.social_icons a:first-child {
   margin-right: 5px;
   background: #4267B2;
 }
-.social_icons a:first-child:hover{
+
+.social_icons a:first-child:hover {
   background: #375695;
 }
-.social_icons a:last-child{
+
+.social_icons a:last-child {
   margin-left: 5px;
   background: #1DA1F2;
 }
-.social_icons a:last-child:hover{
+
+.social_icons a:last-child:hover {
   background: #0d8bd9;
 }
+
 form {
   margin-top: 25px;
 }
-form .input_box{
+
+form .input_box {
   height: 50px;
   width: 100%;
   position: relative;
   margin-top: 15px;
 }
-.input_box input{
+
+.input_box input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -76,35 +90,42 @@ form .input_box{
   font-size: 17px;
   transition: all 0.3s ease;
 }
-.input_box input:focus{
+
+.input_box input:focus {
   border-color: #be2edd;
 }
-.input_box .icon{
+
+.input_box .icon {
   position: absolute;
   top: 50%;
   left: 20px;
   transform: translateY(-50%);
   color: grey;
 }
-form .option_div{
+
+form .option_div {
   margin-top: 5px;
   display: flex;
   justify-content: space-between;
 }
-.option_div .check_box{
+
+.option_div .check_box {
   display: flex;
   align-items: center;
 }
-.option_div span{
+
+.option_div span {
   margin-left: 5px;
   font-size: 16px;
   color: #333;
 }
-.option_div .forget_div a{
+
+.option_div .forget_div a {
   font-size: 16px;
   color: #be2edd;
 }
-.button input{
+
+.button input {
   padding-left: 0;
   background: #be2edd;
   color: #fff;
@@ -114,19 +135,24 @@ form .option_div{
   cursor: pointer;
   transition: all 0.3s linear;
 }
-.button input:hover{
+
+.button input:hover {
   background: #a720c5;
 }
-form .sign_up{
+
+form .sign_up {
   text-align: center;
   margin-top: 25px;
 }
-.sign_up a{
+
+.sign_up a {
   color: #be2edd;
 }
-form a{
+
+form a {
   text-decoration: none;
 }
-form a:hover{
+
+form a:hover {
   text-decoration: underline;
 }

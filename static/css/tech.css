@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   outline: none;
@@ -7,48 +8,56 @@
 }
 
 
-.container{
+.container {
   width: 330px;
   background: #fff;
   text-align: center;
   border-radius: 5px;
   padding: 50px 35px 10px 35px;
 }
-.container header{
+
+.container header {
   font-size: 35px;
   font-weight: 600;
   margin: 0 0 30px 0;
 }
-.container .form-outer{
+
+.container .form-outer {
   width: 100%;
   overflow: hidden;
 }
-.container .form-outer form{
+
+.container .form-outer form {
   display: flex;
   width: 400%;
 }
-.form-outer form .page{
+
+.form-outer form .page {
   width: 25%;
   transition: margin-left 0.3s ease-in-out;
 }
-.form-outer form .page .title{
+
+.form-outer form .page .title {
   text-align: left;
   font-size: 25px;
   font-weight: 500;
 }
-.form-outer form .page .field{
+
+.form-outer form .page .field {
   width: 330px;
   height: 45px;
   margin: 45px 0;
   display: flex;
   position: relative;
 }
-form .page .field .label{
+
+form .page .field .label {
   position: absolute;
   top: -30px;
   font-weight: 500;
 }
-form .page .field input{
+
+form .page .field input {
   height: 100%;
   width: 100%;
   border: 1px solid lightgrey;
@@ -56,13 +65,15 @@ form .page .field input{
   padding-left: 15px;
   font-size: 18px;
 }
-form .page .field select{
+
+form .page .field select {
   width: 100%;
   padding-left: 10px;
   font-size: 17px;
   font-weight: 500;
 }
-form .page .field button{
+
+form .page .field button {
   width: 100%;
   height: calc(100% + 5px);
   border: none;
@@ -77,36 +88,44 @@ form .page .field button{
   text-transform: uppercase;
   transition: 0.5s ease;
 }
-form .page .field button:hover{
+
+form .page .field button:hover {
   background: #000;
 }
-form .page .btns button{
-  margin-top: -20px!important;
+
+form .page .btns button {
+  margin-top: -20px !important;
 }
-form .page .btns button.prev{
+
+form .page .btns button.prev {
   margin-right: 3px;
   font-size: 17px;
 }
-form .page .btns button.next{
+
+form .page .btns button.next {
   margin-left: 3px;
 }
-.container .progress-bar{
+
+.container .progress-bar {
   display: flex;
   margin: 40px 0;
   user-select: none;
 }
-.container .progress-bar .step{
+
+.container .progress-bar .step {
   text-align: center;
   width: 100%;
   position: relative;
 }
-.container .progress-bar .step p{
+
+.container .progress-bar .step p {
   font-weight: 500;
   font-size: 18px;
   color: #000;
   margin-bottom: 8px;
 }
-.progress-bar .step .bullet{
+
+.progress-bar .step .bullet {
   height: 25px;
   width: 25px;
   border: 2px solid #000;
@@ -118,20 +137,24 @@ form .page .btns button.next{
   font-size: 17px;
   line-height: 25px;
 }
-.progress-bar .step .bullet.active{
+
+.progress-bar .step .bullet.active {
   border-color: #d43f8d;
   background: #d43f8d;
 }
-.progress-bar .step .bullet span{
+
+.progress-bar .step .bullet span {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-.progress-bar .step .bullet.active span{
+
+.progress-bar .step .bullet.active span {
   display: none;
 }
+
 .progress-bar .step .bullet:before,
-.progress-bar .step .bullet:after{
+.progress-bar .step .bullet:after {
   position: absolute;
   content: '';
   bottom: 11px;
@@ -140,26 +163,31 @@ form .page .btns button.next{
   width: 44px;
   background: #262626;
 }
-.progress-bar .step .bullet.active:after{
+
+.progress-bar .step .bullet.active:after {
   background: #d43f8d;
   transform: scaleX(0);
   transform-origin: left;
   animation: animate 0.3s linear forwards;
 }
+
 @keyframes animate {
-  100%{
+  100% {
     transform: scaleX(1);
   }
 }
+
 .progress-bar .step:last-child .bullet:before,
-.progress-bar .step:last-child .bullet:after{
+.progress-bar .step:last-child .bullet:after {
   display: none;
 }
-.progress-bar .step p.active{
+
+.progress-bar .step p.active {
   color: #d43f8d;
   transition: 0.2s linear;
 }
-.progress-bar .step .check{
+
+.progress-bar .step .check {
   position: absolute;
   left: 50%;
   top: 70%;
@@ -167,7 +195,8 @@ form .page .btns button.next{
   transform: translate(-50%, -50%);
   display: none;
 }
-.progress-bar .step .check.active{
+
+.progress-bar .step .check.active {
   display: block;
   color: #fff;
 }
